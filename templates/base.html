@@ -3,15 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <title>CRUD Usuários</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
-        li {margin-bottom: 20px;}
-        .container { max-width: 800px; margin: auto; background: #fff; padding: 15px; border-radius: 5px; }
-        .btn { padding: 5px 10px; margin: 2px; text-decoration: none; border: 1px solid #333; border-radius: 3px; }
-        .btn:hover { opacity: 0.8; }
-        .success { color: green; }
-        .error { color: red; }
-    </style>
+<style>
+/* Garante que padding e border não aumentem a largura */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.btn {
+    padding: 8px 12px;
+    margin: 5px 2px; /* pequenas margens laterais */
+    text-decoration: none;
+    border: 1px solid #333;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+.success { color: green; }
+.error { color: red; }
+
+/* Flex para organizar botões */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* Inputs e formulários responsivos */
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    li {
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 100%;        
+        margin: 5px 0;      
+    }
+
+    .btn-group {
+        flex-direction: column; 
+        gap: 5px;
+    }
+}
+</style>
+
+
 </head>
 <body>
     <div class="container">
