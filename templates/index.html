@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href="{{ url_for('criar') }}" class="btn">Novo Usuário</a>
+
+<ul>
+    {% for u in usuarios %}
+        <li>
+            {{ u.id }} - {{ u.nome }} | {{ u.email }} | {{ u.telefone }}
+            <a href="{{ url_for('editar', id=u.id) }}" class="btn">Editar</a>
+            <a href="{{ url_for('excluir', id=u.id) }}" class="btn">Excluir</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Usuários</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+        li {margin-bottom: 20px;}
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 15px; border-radius: 5px; }
+        .btn { padding: 5px 10px; margin: 2px; text-decoration: none; border: 1px solid #333; border-radius: 3px; }
+        .btn:hover { opacity: 0.8; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD Usuários</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
